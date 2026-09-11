@@ -1,0 +1,8 @@
+# node_modules, build output, env local
+node_modules/
+.next/
+out/
+build/
+.env*.local
+*.log
+.DS_Store

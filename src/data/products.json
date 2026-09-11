@@ -1,0 +1,38 @@
+[
+  {
+    "id": "clasica",
+    "name": "Clásica",
+    "description": "Chips de chocolate y masa dorada",
+    "price": 2.0,
+    "unit": "Caja de 5 unidades",
+    "image": "/images/clasica.jpg",
+    "alt": "Caja de mini galletas clásicas con chips de chocolate"
+  },
+  {
+    "id": "red-velvet",
+    "name": "Red Velvet",
+    "description": "Cacao suave con trozos de chocolate blanco",
+    "price": 3.0,
+    "unit": "Caja de 5 unidades",
+    "image": "/images/red-velvet.jpg",
+    "alt": "Mini galletas red velvet con chocolate blanco"
+  },
+  {
+    "id": "oreo",
+    "name": "Oreo",
+    "description": "Masa de cocoa con trozos de galleta Oreo",
+    "price": 3.0,
+    "unit": "Caja de 5 unidades",
+    "image": "/images/oreo.jpg",
+    "alt": "Mini galletas de Oreo con trozos crocantes"
+  },
+  {
+    "id": "caramelo",
+    "name": "Caramelo",
+    "description": "Dulce de caramelo y toque de sal",
+    "price": 2.5,
+    "unit": "Caja de 5 unidades",
+    "image": "/images/caramelo.jpg",
+    "alt": "Mini galletas de caramelo dorado"
+  }
+]
