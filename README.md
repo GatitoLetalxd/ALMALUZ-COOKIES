@@ -27,61 +27,74 @@ npm run dev
   nombre y Next.js la reoptimiza sola.
 - Cursores galleta: `public/cursors/cookie.svg` y `cookie-pointer.svg`.
 
-## Producción en VPS (Contabo, Ubuntu 24.04)
+## Producción en VPS (Contabo, Ubuntu 24.04) — Despliegue Estático Nginx
 
-> **Nota de puertos en este VPS:** Los puertos 3000 al 3005 ya están en uso por otros proyectos (`continental`, `lunielanime`, `moonpanel`, `moonpelis`, `moonfit`, `daniy-luz`). Por ello, ALMALUZ corre en el puerto **3006**.
+ALMALUZ Cookies está desplegado como un **sitio 100% estático servido directamente por Nginx** desde `/var/www/almaluz`. No requiere procesos Node.js ni PM2 en segundo plano, liberando memoria RAM en el servidor y ofreciendo la máxima velocidad de respuesta.
+
+### Despliegue con un solo comando
+
+Cada vez que edites precios, sabores o contenidos:
 
 ```bash
-npm install
-npm run build
-# Opción A (usando el archivo ecosystem):
-pm2 start ecosystem.config.cjs
-# Opción B (directo con npm):
-# pm2 start npm --name "almaluz" -- start -- -p 3006
-
-pm2 save
-pm2 startup   # y ejecuta el comando que te indique si no está configurado
+npm run deploy
 ```
 
-La app queda en `http://127.0.0.1:3006`.
+Este comando realiza automáticamente:
+1. `next build` (generación estática en `out/`).
+2. Sincronización limpia hacia `/var/www/almaluz/`.
+3. Ajuste de permisos para `www-data:www-data`.
 
-### Nginx (reverse proxy) — `/etc/nginx/sites-available/almaluz.moondev.online`
+### Configuración de Nginx — `/etc/nginx/sites-available/almaluz.moondev.online`
 
-El archivo de configuración ya se encuentra listo en `almaluz.nginx.conf` y en `/etc/nginx/sites-available/almaluz.moondev.online`:
+El archivo de configuración se encuentra en `almaluz.nginx.conf` y en el sistema en `/etc/nginx/sites-available/almaluz.moondev.online`:
 
 ```nginx
 server {
-    listen 80;
-    listen [::]:80;
     server_name almaluz.moondev.online;
 
-    # Gzip Compression
+    root /var/www/almaluz;
+    index index.html;
+
+    # Compresión Gzip
     gzip on;
     gzip_vary on;
     gzip_proxied any;
     gzip_comp_level 6;
     gzip_types text/plain text/css text/javascript application/javascript application/json application/xml image/svg+xml font/woff2;
 
+    # Routing SPA / Estático
     location / {
-        proxy_pass http://127.0.0.1:3006;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
+        try_files $uri $uri.html $uri/ /index.html;
     }
+
+    # Caché inmutable para imágenes y assets estáticos (30 días)
+    location ~* \.(jpg|jpeg|png|webp|svg|ico|woff|woff2)$ {
+        expires 30d;
+        add_header Cache-Control "public, max-age=2592000, immutable";
+        access_log off;
+    }
+
+    # Caché inmutable para bundles versionados de Next.js (1 año)
+    location /_next/static/ {
+        expires 365d;
+        add_header Cache-Control "public, max-age=31536000, immutable";
+        access_log off;
+    }
+
+    listen [::]:443 ssl;
+    listen 443 ssl;
+    ssl_certificate /etc/letsencrypt/live/almaluz.moondev.online/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/almaluz.moondev.online/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 }
-```
 
-Para activarlo y emitir el certificado SSL:
-
-```bash
-sudo ln -sf /etc/nginx/sites-available/almaluz.moondev.online /etc/nginx/sites-enabled/
-sudo nginx -t && sudo systemctl reload nginx
-sudo certbot --nginx -d almaluz.moondev.online
+server {
+    listen 80;
+    listen [::]:80;
+    server_name almaluz.moondev.online;
+    return 301 https://$host$request_uri;
+}
 ```
 
 DNS en Hostinger: registro `A` con host `almaluz` apuntando a la IP del VPS.
