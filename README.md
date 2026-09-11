@@ -29,36 +29,57 @@ npm run dev
 
 ## Producción en VPS (Contabo, Ubuntu 24.04)
 
+> **Nota de puertos en este VPS:** Los puertos 3000 al 3005 ya están en uso por otros proyectos (`continental`, `lunielanime`, `moonpanel`, `moonpelis`, `moonfit`, `daniy-luz`). Por ello, ALMALUZ corre en el puerto **3006**.
+
 ```bash
 npm install
 npm run build
-pm2 start npm --name "almaluz" -- start -- -p 3001
+# Opción A (usando el archivo ecosystem):
+pm2 start ecosystem.config.cjs
+# Opción B (directo con npm):
+# pm2 start npm --name "almaluz" -- start -- -p 3006
+
 pm2 save
-pm2 startup   # y ejecuta el comando que te indique
+pm2 startup   # y ejecuta el comando que te indique si no está configurado
 ```
 
-La app queda en `http://127.0.0.1:3001`.
+La app queda en `http://127.0.0.1:3006`.
 
-### Nginx (reverse proxy) — `/etc/nginx/sites-available/almaluz`
+### Nginx (reverse proxy) — `/etc/nginx/sites-available/almaluz.moondev.online`
+
+El archivo de configuración ya se encuentra listo en `almaluz.nginx.conf` y en `/etc/nginx/sites-available/almaluz.moondev.online`:
 
 ```nginx
 server {
     listen 80;
+    listen [::]:80;
     server_name almaluz.moondev.online;
 
+    # Gzip Compression
+    gzip on;
+    gzip_vary on;
+    gzip_proxied any;
+    gzip_comp_level 6;
+    gzip_types text/plain text/css text/javascript application/javascript application/json application/xml image/svg+xml font/woff2;
+
     location / {
-        proxy_pass http://127.0.0.1:3001;
+        proxy_pass http://127.0.0.1:3006;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
         proxy_set_header Host $host;
         proxy_cache_bypass $http_upgrade;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
     }
 }
 ```
 
+Para activarlo y emitir el certificado SSL:
+
 ```bash
-sudo ln -s /etc/nginx/sites-available/almaluz /etc/nginx/sites-enabled/
+sudo ln -sf /etc/nginx/sites-available/almaluz.moondev.online /etc/nginx/sites-enabled/
 sudo nginx -t && sudo systemctl reload nginx
 sudo certbot --nginx -d almaluz.moondev.online
 ```
