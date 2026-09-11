@@ -4,7 +4,7 @@ export default function Footer() {
   const numero = getWhatsAppNumber();
   return (
     <footer className="mt-6 border-t border-pergamino bg-tarjeta">
-      <div className="mx-auto max-w-5xl px-4 py-8 text-sm text-cacao-claro">
+      <div className="mx-auto max-w-5xl px-4 pt-8 pb-28 text-sm text-cacao-claro md:pb-24">
         <p className="font-marca text-lg font-semibold text-cacao">ALMALUZ Cookies</p>
         <p className="mt-1">
           Horneado en Chiclayo. Pedidos sujetos a disponibilidad del día.

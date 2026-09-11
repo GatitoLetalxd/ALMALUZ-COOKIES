@@ -44,17 +44,17 @@ export default function ProductCard({ product }: { product: Product }) {
       className="card-pergamino flex flex-col overflow-hidden"
       aria-label={`${product.name}, ${formatPrice(product.price)} por caja`}
     >
-      {isVelvet && (
-        <span className="bg-velvet px-4 pt-2 text-xs font-medium text-crema">
-          La favorita para regalar
-        </span>
-      )}
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-crema">
+        {isVelvet && (
+          <span className="absolute top-3 left-3 z-10 rounded-full bg-velvet px-3 py-1 text-xs font-medium text-crema shadow-sm">
+            La favorita para regalar
+          </span>
+        )}
         <Image
           src={product.image}
           alt={product.alt}
           fill
-          sizes="(max-width: 768px) 50vw, 25vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           loading="lazy"
           className="object-cover"
         />
@@ -65,7 +65,7 @@ export default function ProductCard({ product }: { product: Product }) {
         </h3>
         <p className="text-sm text-cacao-claro">{product.description}</p>
         <p className="mt-1 text-xs text-cacao-claro">{product.unit}</p>
-        <div className="mt-3 flex items-center justify-between gap-2">
+        <div className="mt-auto flex items-center justify-between gap-2 pt-3">
           <span className="text-base font-semibold text-cacao">
             {formatPrice(product.price)}
           </span>

@@ -138,7 +138,9 @@ export default function BoxMixer({ onAdded }: { onAdded?: () => void }) {
               {completa
                 ? "Caja completa, lista para agregar."
                 : faltan > 0
-                  ? `Te faltan ${faltan} ${faltan === 1 ? "galleta" : "galletas"}.`
+                  ? faltan === 1
+                    ? "Te falta 1 galleta."
+                    : `Te faltan ${faltan} galletas.`
                   : `Te pasaste por ${-faltan}.`}
             </p>
             <p className="font-marca text-xl font-semibold text-cacao">

@@ -34,8 +34,6 @@ export default function CartSheet({
     };
   }, [open, onClose]);
 
-  if (!open) return null;
-
   const enviarPedido = () => {
     if (isEmpty) return;
     // Arma el mensaje con sabores, cantidades, precios y total
@@ -63,14 +61,26 @@ export default function CartSheet({
   };
 
   return (
-    <div className="fixed inset-0 z-50" role="dialog" aria-modal="true" aria-label="Tu pedido">
+    <div
+      className={`fixed inset-0 z-50 transition-opacity duration-300 ${
+        open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+      }`}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Tu pedido"
+      aria-hidden={!open}
+    >
       <div
-        className="sheet-transition absolute inset-0 bg-cacao/50"
+        className="absolute inset-0 bg-cacao/50 transition-opacity duration-300"
         onClick={onClose}
         aria-hidden="true"
       />
-      <div className="sheet-transition absolute inset-x-0 bottom-0 mx-auto max-h-[85vh] w-full max-w-xl overflow-hidden rounded-t-3xl border-t border-pergamino bg-tarjeta shadow-2xl">
-        <div className="flex items-center justify-between border-b border-pergamino px-5 py-4">
+      <div
+        className={`absolute inset-x-0 bottom-0 mx-auto flex max-h-[85vh] w-full max-w-xl flex-col overflow-hidden rounded-t-3xl border-t border-pergamino bg-tarjeta shadow-2xl transition-transform duration-300 ease-out ${
+          open ? "translate-y-0" : "translate-y-full"
+        }`}
+      >
+        <div className="flex flex-shrink-0 items-center justify-between border-b border-pergamino px-5 py-4">
           <h2 className="font-marca text-xl font-semibold text-cacao">
             Tu pedido {count > 0 && `(${count})`}
           </h2>
@@ -84,7 +94,7 @@ export default function CartSheet({
           </button>
         </div>
 
-        <div className="max-h-[50vh] overflow-y-auto px-5 py-4">
+        <div className="flex-1 overflow-y-auto px-5 py-4">
           {isEmpty ? (
             <div className="py-6 text-center">
               <Image
@@ -181,7 +191,7 @@ export default function CartSheet({
           )}
         </div>
 
-        <div className="border-t border-pergamino bg-crema px-5 py-4">
+        <div className="flex-shrink-0 border-t border-pergamino bg-crema px-5 py-4">
           <div className="flex items-center justify-between">
             <span className="text-sm text-cacao-claro">Total</span>
             <span className="font-marca text-xl font-semibold text-cacao">
