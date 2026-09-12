@@ -5,7 +5,7 @@ export type OrderLine = {
   name: string;
   qty: number;
   unitPrice: number;
-  // Detalle opcional (ej. desglose de sabores de una caja de 20).
+  // Detalle opcional (ej. presentación o desglose de sabores).
   detail?: string;
 };
 
@@ -19,7 +19,7 @@ export function formatPrice(n: number): string {
   return `S/ ${n.toFixed(2)}`;
 }
 
-// Arma el mensaje humano que se envía por WhatsApp.
+// Arma el mensaje ordenado que se envía por WhatsApp.
 export function buildOrderMessage(
   lines: OrderLine[],
   total: number,
@@ -27,14 +27,14 @@ export function buildOrderMessage(
   const detalle = lines
     .map((l) => {
       const base = `- ${l.qty}x ${l.name}`;
-      const extra = l.detail ? ` (${l.detail})` : "";
+      const extra = l.detail ? ` [${l.detail}]` : "";
       return `${base}${extra} — ${formatPrice(l.qty * l.unitPrice)}`;
     })
     .join("\n");
 
   return (
     `Hola ALMALUZ, quiero pedir:\n` +
-    `${detalle}\n` +
+    `${detalle}\n\n` +
     `Total: ${formatPrice(total)}\n\n` +
     `Nombre:\n` +
     `Ciudad:\n` +

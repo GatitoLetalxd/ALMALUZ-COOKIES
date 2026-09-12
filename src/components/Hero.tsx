@@ -12,21 +12,21 @@ export default function Hero() {
             Mini bites artesanales, horneados en casa.
           </h1>
           <p className="mt-3 max-w-md text-base leading-relaxed text-cacao-claro">
-            Elige tus sabores, arma tu caja y coordina el pago por Yape o Plin
-            en minutos. Hacemos envíos a todo el Perú desde la caja de 20.
+            Elige tus sabores, arma tu caja surtida y coordina el pago por Yape o Plin
+            en minutos. Hacemos envíos a todo el Perú desde la caja de 25.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
               href="#sabores"
-              className="rounded-full bg-cacao px-6 py-3 text-sm font-semibold text-crema hover:bg-cacao-claro"
+              className="rounded-full bg-cacao px-6 py-3 text-sm font-semibold text-crema hover:bg-cacao-claro transition-colors"
             >
               Ver sabores
             </a>
             <a
-              href="#como-funciona"
-              className="rounded-full border border-caramelo-oscuro bg-tarjeta px-6 py-3 text-sm font-semibold text-cacao hover:bg-crema"
+              href="#caja-surtida"
+              className="rounded-full border border-caramelo-oscuro bg-tarjeta px-6 py-3 text-sm font-semibold text-cacao hover:bg-crema transition-colors"
             >
-              Cómo pedir
+              Caja Surtida
             </a>
           </div>
         </div>
@@ -43,7 +43,7 @@ export default function Hero() {
             />
           </figure>
           <figcaption className="mt-2 text-center text-xs text-cacao-claro">
-            Clásica, Red Velvet, Oreo y Caramelo — cajas de 5 unidades
+            Clásica, Caramelo, Red Velvet y Oreo — en bolsitas x5 y cajas de 25, 50 y 100
           </figcaption>
         </div>
       </div>

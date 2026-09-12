@@ -11,11 +11,11 @@ export default function CartBar({ onOpen }: { onOpen: () => void }) {
       <button
         type="button"
         onClick={onOpen}
-        aria-label={`Ver pedido, ${count} cajas por ${formatPrice(total)}`}
-        className="mx-auto flex w-full max-w-xl items-center justify-between rounded-full bg-cacao px-5 py-4 text-crema shadow-xl hover:bg-cacao-claro"
+        aria-label={`Ver pedido, ${count} ${count === 1 ? "ítem" : "ítems"} por ${formatPrice(total)}`}
+        className="mx-auto flex w-full max-w-xl items-center justify-between rounded-full bg-cacao px-5 py-4 text-crema shadow-xl hover:bg-cacao-claro transition-colors"
       >
         <span className="text-sm font-medium">
-          {count} {count === 1 ? "caja" : "cajas"} en tu pedido
+          {count} {count === 1 ? "ítem" : "ítems"} en tu pedido
         </span>
         <span className="text-base font-semibold">{formatPrice(total)}</span>
       </button>

@@ -16,23 +16,37 @@ export default function Showcase() {
           />
         </figure>
         <div>
-          <h2 className="font-marca text-2xl font-semibold text-cacao">
+          <span className="text-xs font-semibold uppercase tracking-wider text-caramelo-oscuro">
+            Presentaciones a tu medida
+          </span>
+          <h2 className="font-marca mt-1 text-2xl font-semibold text-cacao">
             Una caja, cuatro antojos
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-cacao-claro">
-            Todas las cajas de sabor traen 5 mini galletas. Puedes combinar
-            varias cajas en un solo pedido, o armar tu{" "}
-            <a href="#caja-20" className="font-medium text-cacao underline underline-offset-2">
-              caja de 20 con los sabores que quieras
+            Elige tus sabores individuales en <strong>Bolsita x5</strong>, <strong>Caja pequeña x25</strong>, <strong>Caja mediana x50</strong> o <strong>Caja evento x100</strong> con descuento por volumen. O si prefieres probar de todo, pide tu{" "}
+            <a href="#caja-surtida" className="font-semibold text-cacao underline underline-offset-2 hover:text-caramelo-oscuro">
+              Caja Surtida de 4 sabores
             </a>
-            , ideal si tu pedido viaja fuera de Chiclayo.
+            , ideal para compartir o para envíos fuera de Chiclayo.
           </p>
-          <ul className="mt-4 space-y-1 text-sm text-cacao">
-            <li>Clásica — S/ 2.00 la caja</li>
-            <li>Red Velvet — S/ 3.00 la caja</li>
-            <li>Oreo — S/ 3.00 la caja</li>
-            <li>Caramelo — S/ 2.50 la caja</li>
-          </ul>
+          <div className="mt-4 grid grid-cols-2 gap-2 text-xs text-cacao">
+            <div className="rounded-xl border border-pergamino bg-crema/60 p-2.5">
+              <p className="font-semibold text-cacao">Bolsitas x5</p>
+              <p className="text-cacao-claro">Desde S/ 2.00 por pack</p>
+            </div>
+            <div className="rounded-xl border border-pergamino bg-crema/60 p-2.5">
+              <p className="font-semibold text-cacao">Cajas x25</p>
+              <p className="text-cacao-claro">Desde S/ 10.00 por caja</p>
+            </div>
+            <div className="rounded-xl border border-pergamino bg-crema/60 p-2.5">
+              <p className="font-semibold text-cacao">Cajas x50</p>
+              <p className="text-cacao-claro">Desde S/ 20.00 (con ahorro)</p>
+            </div>
+            <div className="rounded-xl border border-pergamino bg-crema/60 p-2.5">
+              <p className="font-semibold text-cacao">Cajas x100</p>
+              <p className="text-cacao-claro">Desde S/ 38.00 (mayor ahorro)</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
