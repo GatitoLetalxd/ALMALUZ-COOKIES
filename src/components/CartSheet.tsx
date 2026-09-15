@@ -100,12 +100,12 @@ export default function CartSheet({
           {isEmpty ? (
             <div className="py-8 text-center">
               <Image
-                src="/images/caramelo.jpg"
-                alt="Mini galletas de caramelo"
-                width={160}
-                height={120}
+                src="/images/logo.webp"
+                alt="Logo ALMALUZ Cookies"
+                width={112}
+                height={112}
                 loading="lazy"
-                className="mx-auto rounded-2xl border border-pergamino object-cover"
+                className="mx-auto h-28 w-28 object-contain drop-shadow-xs"
               />
               <p className="mt-4 text-sm text-cacao-claro">
                 Aún no agregas productos a tu pedido. Elige tus sabores o arma tu caja surtida.

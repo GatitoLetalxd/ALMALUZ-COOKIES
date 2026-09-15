@@ -29,9 +29,15 @@ export const metadata: Metadata = {
     siteName: "ALMALUZ Cookies",
     locale: "es_PE",
     type: "website",
-    images: [{ url: "/og-cover.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/images/logo.webp", width: 774, height: 778, alt: "ALMALUZ Cookies — Mini bites artesanales" }],
   },
-  icons: { icon: "/icon.svg" },
+  icons: {
+    icon: [
+      { url: "/icon.png", sizes: "64x64", type: "image/png" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({

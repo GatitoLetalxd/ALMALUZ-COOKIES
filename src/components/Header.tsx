@@ -8,14 +8,23 @@ export default function Header({ onOpenCart }: { onOpenCart: () => void }) {
   return (
     <header className="sticky top-0 z-40 border-b border-pergamino bg-crema/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4">
-        <a href="#inicio" className="flex items-center gap-2" aria-label="ALMALUZ inicio">
-          <Image src="/icon.svg" alt="" width={30} height={30} aria-hidden="true" />
-          <span className="font-marca text-xl font-semibold tracking-wide text-cacao">
-            ALMALUZ
-          </span>
-          <span className="hidden text-xs text-cacao-claro sm:inline">
-            mini bites artesanales
-          </span>
+        <a href="#inicio" className="flex items-center gap-2.5" aria-label="ALMALUZ inicio">
+          <Image
+            src="/images/logo.webp"
+            alt="Logo ALMALUZ Cookies"
+            width={40}
+            height={40}
+            priority
+            className="h-10 w-10 object-contain drop-shadow-xs transition-transform hover:scale-105"
+          />
+          <div className="flex flex-col leading-none">
+            <span className="font-marca text-xl font-semibold tracking-wide text-cacao">
+              ALMALUZ
+            </span>
+            <span className="hidden text-[11px] text-cacao-claro sm:inline mt-0.5">
+              mini bites artesanales
+            </span>
+          </div>
         </a>
         <nav className="hidden items-center gap-5 text-sm text-cacao-claro md:flex" aria-label="Secciones">
           <a className="hover:text-cacao transition-colors" href="#sabores">Sabores</a>
