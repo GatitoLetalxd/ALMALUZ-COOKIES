@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Showcase() {
   return (
-    <section aria-label="Una caja, cuatro antojos" className="border-y border-pergamino bg-tarjeta">
+    <section aria-label="Una caja, cinco antojos" className="border-y border-pergamino bg-tarjeta">
       <div className="mx-auto grid max-w-5xl items-center gap-6 px-4 py-10 md:grid-cols-2">
         <figure className="card-pergamino overflow-hidden">
           <Image
@@ -20,31 +20,31 @@ export default function Showcase() {
             Presentaciones a tu medida
           </span>
           <h2 className="font-marca mt-1 text-2xl font-semibold text-cacao">
-            Una caja, cuatro antojos
+            Una caja, cinco antojos
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-cacao-claro">
-            Elige tus sabores individuales en <strong>Bolsita x5</strong>, <strong>Caja pequeña x25</strong>, <strong>Caja mediana x50</strong> o <strong>Caja evento x100</strong> con descuento por volumen. O si prefieres probar de todo, pide tu{" "}
+            Disfruta de nuestros 5 sabores: <strong>Clásica, Limón, Caramelo, Red Velvet y Oreo</strong> en <strong>Bolsita x5</strong>, <strong>Caja pequeña x25</strong>, <strong>Caja mediana x50</strong> o <strong>Caja evento x100</strong> con descuento por volumen. O si prefieres probar de todo, pide tu{" "}
             <a href="#caja-surtida" className="font-semibold text-cacao underline underline-offset-2 hover:text-caramelo-oscuro">
-              Caja Surtida de 4 sabores
+              Caja Surtida de 5 sabores (desde x15 hasta x100)
             </a>
             , ideal para compartir o para envíos fuera de Chiclayo.
           </p>
           <div className="mt-4 grid grid-cols-2 gap-2 text-xs text-cacao">
             <div className="rounded-xl border border-pergamino bg-crema/60 p-2.5">
               <p className="font-semibold text-cacao">Bolsitas x5</p>
-              <p className="text-cacao-claro">Desde S/ 2.00 por pack</p>
+              <p className="text-cacao-claro">Desde S/ 3.50 por pack</p>
             </div>
             <div className="rounded-xl border border-pergamino bg-crema/60 p-2.5">
               <p className="font-semibold text-cacao">Cajas x25</p>
-              <p className="text-cacao-claro">Desde S/ 10.00 por caja</p>
+              <p className="text-cacao-claro">Desde S/ 18.00 (en surtido)</p>
             </div>
             <div className="rounded-xl border border-pergamino bg-crema/60 p-2.5">
               <p className="font-semibold text-cacao">Cajas x50</p>
-              <p className="text-cacao-claro">Desde S/ 20.00 (con ahorro)</p>
+              <p className="text-cacao-claro">Desde S/ 28.00 (con ahorro)</p>
             </div>
             <div className="rounded-xl border border-pergamino bg-crema/60 p-2.5">
               <p className="font-semibold text-cacao">Cajas x100</p>
-              <p className="text-cacao-claro">Desde S/ 38.00 (mayor ahorro)</p>
+              <p className="text-cacao-claro">Desde S/ 50.00 (mayor ahorro)</p>
             </div>
           </div>
         </div>

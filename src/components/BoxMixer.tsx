@@ -127,18 +127,18 @@ export default function BoxMixer({ onAdded }: { onAdded?: () => void }) {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
           <span className="inline-block rounded-full bg-caramelo/20 border border-caramelo/30 px-3 py-1 text-xs font-semibold text-cacao">
-            Combinación de los 4 Sabores
+            Combinación de los 5 Sabores
           </span>
           <h2 id="cajasurtida-titulo" className="font-marca mt-2 text-2xl font-semibold text-cacao md:text-3xl">
             Caja Surtida
           </h2>
           <p className="mt-1 text-sm text-cacao-claro max-w-xl">
-            Disfruta de Clásica, Caramelo, Red Velvet y Oreo en una sola caja. Elige tu tamaño favorito o personaliza la cantidad exacta de cada sabor.
+            Disfruta de Clásica, Limón, Caramelo, Red Velvet y Oreo en una sola caja. Elige tu tamaño favorito o personaliza la cantidad exacta de cada sabor.
           </p>
         </div>
 
         {/* Selector de Tamaño de Caja Surtida */}
-        <div className="flex rounded-2xl border border-pergamino bg-crema/80 p-1">
+        <div className="flex flex-wrap sm:flex-nowrap rounded-2xl border border-pergamino bg-crema/80 p-1 gap-1">
           {SURTIDA_PACKS.map((pk) => {
             const isSelected = pk.size === selectedSize;
             return (
@@ -146,7 +146,7 @@ export default function BoxMixer({ onAdded }: { onAdded?: () => void }) {
                 key={pk.size}
                 type="button"
                 onClick={() => handleSelectSize(pk.size)}
-                className={`flex flex-col items-center px-3 py-2 rounded-xl text-xs font-semibold transition-all ${
+                className={`flex flex-col items-center px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl text-xs font-semibold transition-all ${
                   isSelected
                     ? "bg-cacao text-crema shadow-xs"
                     : "text-cacao hover:bg-tarjeta"
@@ -188,7 +188,7 @@ export default function BoxMixer({ onAdded }: { onAdded?: () => void }) {
             <figure className="relative h-44 w-full md:w-56 flex-shrink-0 overflow-hidden rounded-2xl border border-pergamino">
               <Image
                 src="/images/bandeja-surtida.jpg"
-                alt="Caja surtida con los 4 sabores de mini galletas"
+                alt="Caja surtida con los 5 sabores de mini galletas"
                 fill
                 sizes="(max-width: 768px) 100vw, 240px"
                 className="object-cover"
@@ -199,7 +199,7 @@ export default function BoxMixer({ onAdded }: { onAdded?: () => void }) {
                 Mix balanceado de la casa
               </h4>
               <p className="text-sm leading-relaxed text-cacao-claro">
-                La opción más rápida y elegida: incluye un reparto equilibrado de <strong>Clásica, Caramelo, Red Velvet y Oreo</strong> recién horneadas y listas para compartir.
+                La opción más rápida y elegida: incluye un reparto equilibrado de <strong>Clásica, Limón, Caramelo, Red Velvet y Oreo</strong> recién horneadas y listas para compartir.
               </p>
               <div className="flex flex-wrap items-center gap-3 pt-2">
                 <button

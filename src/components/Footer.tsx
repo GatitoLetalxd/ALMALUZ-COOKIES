@@ -21,7 +21,7 @@ export default function Footer() {
         </div>
         <p className="mt-3">
           Horneado en Chiclayo. Pedidos sujetos a disponibilidad del día.
-          Envíos a todo el Perú desde la caja de 25. Respondemos por WhatsApp
+          Envíos a todo el Perú desde la caja de 25 a más. Respondemos por WhatsApp
           en minutos.
         </p>
         <p className="mt-3">

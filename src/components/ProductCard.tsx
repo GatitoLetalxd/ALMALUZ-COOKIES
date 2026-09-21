@@ -64,6 +64,11 @@ export default function ProductCard({ product }: { product: Product }) {
             La favorita para regalar
           </span>
         )}
+        {product.id === "limon" && (
+          <span className="absolute top-3 left-3 z-10 rounded-full bg-caramelo px-3 py-1 text-xs font-semibold text-cacao shadow-sm">
+            ¡Nuevo sabor!
+          </span>
+        )}
         <Image
           src={product.image}
           alt={product.alt}

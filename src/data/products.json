@@ -3,64 +3,80 @@
     "id": "clasica",
     "name": "Clásica",
     "description": "Chips de chocolate y masa dorada",
-    "baseUnitPrice": 0.40,
-    "price": 2.00,
+    "baseUnitPrice": 0.70,
+    "price": 3.50,
     "unit": "Bolsita de 5 unidades",
     "image": "/images/clasica.jpg",
     "alt": "Bolsita de mini galletas clásicas con chips de chocolate",
     "packs": [
-      { "id": "5", "name": "Bolsita", "count": 5, "price": 2.00 },
-      { "id": "25", "name": "Caja pequeña", "count": 25, "price": 10.00 },
-      { "id": "50", "name": "Caja mediana", "count": 50, "price": 20.00 },
-      { "id": "100", "name": "Caja evento", "count": 100, "price": 38.00, "badge": "Ahorra S/ 2.00" }
+      { "id": "5", "name": "Bolsita", "count": 5, "price": 3.50 },
+      { "id": "25", "name": "Caja pequeña", "count": 25, "price": 20.00 },
+      { "id": "50", "name": "Caja mediana", "count": 50, "price": 28.00, "badge": "Ahorra S/ 7.00" },
+      { "id": "100", "name": "Caja evento", "count": 100, "price": 50.00, "badge": "Ahorra S/ 20.00" }
+    ]
+  },
+  {
+    "id": "limon",
+    "name": "Limón",
+    "description": "Masa suave con glaseado cítrico y ralladura fresca",
+    "baseUnitPrice": 0.90,
+    "price": 4.50,
+    "unit": "Bolsita de 5 unidades",
+    "image": "/images/limon.jpg",
+    "alt": "Bolsita de mini galletas de limón con glaseado y ralladura",
+    "packs": [
+      { "id": "5", "name": "Bolsita", "count": 5, "price": 4.50 },
+      { "id": "25", "name": "Caja pequeña", "count": 25, "price": 20.00, "badge": "Ahorra S/ 2.50" },
+      { "id": "50", "name": "Caja mediana", "count": 50, "price": 38.00, "badge": "Ahorra S/ 7.00" },
+      { "id": "100", "name": "Caja evento", "count": 100, "price": 68.00, "badge": "Ahorra S/ 22.00" }
     ]
   },
   {
     "id": "caramelo",
     "name": "Caramelo",
     "description": "Dulce de caramelo y toque de sal",
-    "baseUnitPrice": 0.50,
-    "price": 2.50,
+    "baseUnitPrice": 0.90,
+    "price": 4.50,
     "unit": "Bolsita de 5 unidades",
     "image": "/images/caramelo.jpg",
     "alt": "Bolsita de mini galletas de caramelo dorado",
     "packs": [
-      { "id": "5", "name": "Bolsita", "count": 5, "price": 2.50 },
-      { "id": "25", "name": "Caja pequeña", "count": 25, "price": 12.50 },
-      { "id": "50", "name": "Caja mediana", "count": 50, "price": 24.00, "badge": "Ahorra S/ 1.00" },
-      { "id": "100", "name": "Caja evento", "count": 100, "price": 45.00, "badge": "Ahorra S/ 5.00" }
+      { "id": "5", "name": "Bolsita", "count": 5, "price": 4.50 },
+      { "id": "25", "name": "Caja pequeña", "count": 25, "price": 20.00, "badge": "Ahorra S/ 2.50" },
+      { "id": "50", "name": "Caja mediana", "count": 50, "price": 38.00, "badge": "Ahorra S/ 7.00" },
+      { "id": "100", "name": "Caja evento", "count": 100, "price": 68.00, "badge": "Ahorra S/ 22.00" }
     ]
   },
   {
     "id": "red-velvet",
     "name": "Red Velvet",
     "description": "Cacao suave con trozos de chocolate blanco",
-    "baseUnitPrice": 0.60,
-    "price": 3.00,
+    "baseUnitPrice": 0.90,
+    "price": 4.50,
     "unit": "Bolsita de 5 unidades",
     "image": "/images/red-velvet.jpg",
     "alt": "Bolsita de mini galletas red velvet con chocolate blanco",
     "packs": [
-      { "id": "5", "name": "Bolsita", "count": 5, "price": 3.00 },
-      { "id": "25", "name": "Caja pequeña", "count": 25, "price": 15.00 },
-      { "id": "50", "name": "Caja mediana", "count": 50, "price": 28.00, "badge": "Ahorra S/ 2.00" },
-      { "id": "100", "name": "Caja evento", "count": 100, "price": 52.00, "badge": "Ahorra S/ 8.00" }
+      { "id": "5", "name": "Bolsita", "count": 5, "price": 4.50 },
+      { "id": "25", "name": "Caja pequeña", "count": 25, "price": 20.00, "badge": "Ahorra S/ 2.50" },
+      { "id": "50", "name": "Caja mediana", "count": 50, "price": 38.00, "badge": "Ahorra S/ 7.00" },
+      { "id": "100", "name": "Caja evento", "count": 100, "price": 68.00, "badge": "Ahorra S/ 22.00" }
     ]
   },
   {
     "id": "oreo",
     "name": "Oreo",
     "description": "Masa de cocoa con trozos de galleta Oreo",
-    "baseUnitPrice": 0.60,
-    "price": 3.00,
+    "baseUnitPrice": 0.90,
+    "price": 4.50,
     "unit": "Bolsita de 5 unidades",
     "image": "/images/oreo.jpg",
     "alt": "Bolsita de mini galletas de Oreo con trozos crocantes",
     "packs": [
-      { "id": "5", "name": "Bolsita", "count": 5, "price": 3.00 },
-      { "id": "25", "name": "Caja pequeña", "count": 25, "price": 15.00 },
-      { "id": "50", "name": "Caja mediana", "count": 50, "price": 28.00, "badge": "Ahorra S/ 2.00" },
-      { "id": "100", "name": "Caja evento", "count": 100, "price": 52.00, "badge": "Ahorra S/ 8.00" }
+      { "id": "5", "name": "Bolsita", "count": 5, "price": 4.50 },
+      { "id": "25", "name": "Caja pequeña", "count": 25, "price": 20.00, "badge": "Ahorra S/ 2.50" },
+      { "id": "50", "name": "Caja mediana", "count": 50, "price": 38.00, "badge": "Ahorra S/ 7.00" },
+      { "id": "100", "name": "Caja evento", "count": 100, "price": 68.00, "badge": "Ahorra S/ 22.00" }
     ]
   }
 ]

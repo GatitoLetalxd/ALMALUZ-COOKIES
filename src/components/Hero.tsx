@@ -13,7 +13,7 @@ export default function Hero() {
           </h1>
           <p className="mt-3 max-w-md text-base leading-relaxed text-cacao-claro">
             Elige tus sabores, arma tu caja surtida y coordina el pago por Yape o Plin
-            en minutos. Hacemos envíos a todo el Perú desde la caja de 25.
+            en minutos. Hacemos envíos a todo el Perú desde la caja de 25 a más.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
@@ -34,7 +34,7 @@ export default function Hero() {
           <figure className="card-pergamino overflow-hidden">
             <Image
               src="/images/hero-cocina.jpg"
-              alt="Mesa de cocina con las cuatro variedades de mini galletas ALMALUZ"
+              alt="Mesa de cocina con las variedades de mini galletas ALMALUZ"
               width={1200}
               height={900}
               priority
@@ -43,7 +43,7 @@ export default function Hero() {
             />
           </figure>
           <figcaption className="mt-2 text-center text-xs text-cacao-claro">
-            Clásica, Caramelo, Red Velvet y Oreo — en bolsitas x5 y cajas de 25, 50 y 100
+            Clásica, Limón, Caramelo, Red Velvet y Oreo — en bolsitas x5 y cajas de 25, 50 y 100
           </figcaption>
         </div>
       </div>
