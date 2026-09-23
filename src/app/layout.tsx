@@ -17,19 +17,57 @@ const cuerpo = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "ALMALUZ Cookies — Mini bites artesanales",
+  title: "ALMALUZ Cookies — Mini galletas artesanales en Perú",
   description:
-    "Mini galletas artesanales horneadas en casa en Perú. Arma tu caja de 5 unidades y pide por WhatsApp con Yape o Plin.",
+    "Mini galletas artesanales horneadas en casa en Perú. Sabores: Clásica, Limón, Caramelo, Red Velvet y Oreo. Pide por WhatsApp y paga con Yape o Plin.",
   metadataBase: new URL("https://almaluz.moondev.online"),
+  keywords: [
+    "galletas artesanales",
+    "mini galletas",
+    "cookies",
+    "galletas Perú",
+    "galletas Lima",
+    "galletas para eventos",
+    "galletas Red Velvet",
+    "galletas Oreo",
+    "galletas caramelo",
+    "galletas limón",
+    "galletas por mayor",
+    "galletas WhatsApp",
+    "galletas Yape",
+    "ALMALUZ",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+  alternates: {
+    canonical: "https://almaluz.moondev.online",
+  },
   openGraph: {
-    title: "ALMALUZ Cookies — Mini bites artesanales",
+    title: "ALMALUZ Cookies — Mini galletas artesanales en Perú",
     description:
-      "Elige tus sabores, arma tu caja y coordina el pago por Yape o Plin en minutos.",
+      "Elige tu sabor favorito, arma tu caja (desde 5 hasta 100 unidades) y coordina el pago por Yape o Plin en minutos.",
     url: "https://almaluz.moondev.online",
     siteName: "ALMALUZ Cookies",
     locale: "es_PE",
     type: "website",
-    images: [{ url: "/images/logo.webp", width: 774, height: 778, alt: "ALMALUZ Cookies — Mini bites artesanales" }],
+    images: [
+      {
+        url: "/og-cover.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ALMALUZ Cookies — Mini galletas artesanales en Perú",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ALMALUZ Cookies — Mini galletas artesanales en Perú",
+    description:
+      "Sabores: Clásica, Limón, Caramelo, Red Velvet y Oreo. Pide por WhatsApp 🍪",
+    images: ["/og-cover.jpg"],
   },
   icons: {
     icon: [
