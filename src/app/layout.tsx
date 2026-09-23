@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   description:
     "Mini galletas artesanales horneadas en casa en Perú. Sabores: Clásica, Limón, Caramelo, Red Velvet y Oreo. Pide por WhatsApp y paga con Yape o Plin.",
   metadataBase: new URL("https://almaluz.moondev.online"),
+  verification: {
+    google: "Rurpr9wcEyOadGuFM_QmnAI_C1hK3KnALVHodLmwKbk",
+  },
   keywords: [
     "galletas artesanales",
     "mini galletas",
